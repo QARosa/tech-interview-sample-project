@@ -4,7 +4,7 @@ Cypress.Commands.add('create', (
   ) => {
     cy.visit('/')
     cy.get('#email').type(Cypress.env('USER_EMAIL'))
-    cy.get('#password').type(Cypress.env('USER_PASSWORD'), { log: false })//log como false nçao permite visializar a senha
+    cy.get('#password').type(Cypress.env('USER_PASSWORD'), { log: false })
     cy.get('button[type="submit"]').click()
     cy.get('h1', {timeout: 10000})
     .should('contain', 'Your Notes')
